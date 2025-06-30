@@ -64,7 +64,7 @@ const WorkerSection = () => {
         className="bg-[#3E3F48]/90 relative z-20 text-white py-16 px-6 md:px-20 flex flex-col md:flex-row items-center"
       >
         <motion.div
-          variants={fadeIn("right", "tween", 0.2, 1)}
+          variants={fadeIn("right", "tween", 0.2, 0.5)}
           className="md:w-1/2 text-center md:text-left"
         >
           <motion.h2
@@ -184,7 +184,7 @@ const WorkerSection = () => {
 
           <motion.div
             variants={fadeIn("left", "tween", 0.4, 1)}
-            className="md:w-1/3 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-6"
+            className="md:w-2/3 flex flex-col md:flex-row items-center justify-end space-y-6 md:space-y-0 lg:space-x-5"
           >
             <div className="">
               {/* <h3 className="text-2xl font-semibold mb-4">
@@ -193,7 +193,7 @@ const WorkerSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#023a51] hover:bg-gray-100 px-8 py-3 uppercase rounded-lg font-bold tracking-wide shadow-md transition-all text-xl inline-block duration-300 cursor-pointer"
+                className="bg-white text-[#023a51] hover:bg-gray-100 px-8 py-3 uppercase rounded-lg font-bold tracking-wide shadow-md transition-all text-xl duration-300 cursor-pointer"
                 onClick={() => {
                   const section = document.querySelector("#get-in-touch");
                   section?.scrollIntoView({ behavior: "smooth" });

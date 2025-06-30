@@ -316,9 +316,9 @@
     "vissionp1": "Our vision is to become a leading agency in workforce solutions, known for excellence and innovation.",
     "vissionp2": "We aim to build lasting relationships fostering mutual growth and success.",
     "vissionp3": "Our focus is on long-term collaboration and continuous improvement.",
-    "bild":" Building Workforce Excellence",
-    "gobal":"Global Reach",
-    "team":"Our Team"
+    "bild": " Building Workforce Excellence",
+    "gobal": "Global Reach",
+    "team": "Our Team"
   },
   "footer": {
     "footert1": "Trust Off2 Work to Optimize Your Workforce",
@@ -328,39 +328,37 @@
     "areow": "Area Of Work",
     "clents": "Client Success Stories",
     "abous": "About Us",
-    "support":"Support",
+    "support": "Support",
     "faqs": "FAQs",
     "cdum": "Contact Information",
     "address": "Addresses"
   },
-  "faqs":{
-    "faqh":"Most Common Questions",
+  "faqs": {
+    "faqh": "Most Common Questions",
 
-    "faqh1":"What are the obligations of an agency for the employment of foreign workers?",
-    "faqh1l1":"Finding suitable workers based on your criteria, conducting selection procedures, and preparing necessary documentation.",
-    "faqh1l2":"Submitting all required documents to obtain temporary residence an work permits for foreign workers.",
-    "faqh1l3":"Covering travel insurance costs for workers.",
-    "faqh1l4":"Assisting with visa applications for residence and work.",
-    "faqh1l5":"Arranging and covering the cost of flight tickets for workers.",
+    "faqh1": "What are the obligations of an agency for the employment of foreign workers?",
+    "faqh1l1": "Finding suitable workers based on your criteria, conducting selection procedures, and preparing necessary documentation.",
+    "faqh1l2": "Submitting all required documents to obtain temporary residence an work permits for foreign workers.",
+    "faqh1l3": "Covering travel insurance costs for workers.",
+    "faqh1l4": "Assisting with visa applications for residence and work.",
+    "faqh1l5": "Arranging and covering the cost of flight tickets for workers.",
 
-    "faqh2":"What are my obligations as an employer?",
-    "faqh2l1":"Provide accommodation and meals for workers upon their arrival. Accommodation must meet minimum living standards, and if meals are not provided, a food allowance must be paid. Register workers for pension and health insurance, just like local employees.",
-    
-    "faqh3":"What conditions must I meet to obtain a residence and work permit?",
-    "faqh3l1":"Conduct economic activity in a field registered in the country.",
-    "faqh3l2":"Employ at least 1/4 Croatian citizens compared to foreign workers, on a full-time and indefinite basis for the past 6 months.",
-    "faqh3l3":"Provide a certificate from the Tax Administration confirming no outstanding public debts, dated no earlier than the permit application submission.",
-    "faqh3l4":"Ensure no final convictions for labor-related or social security offenses.",
+    "faqh2": "What are my obligations as an employer?",
+    "faqh2l1": "Provide accommodation and meals for workers upon their arrival. Accommodation must meet minimum living standards, and if meals are not provided, a food allowance must be paid. Register workers for pension and health insurance, just like local employees.",
 
+    "faqh3": "What conditions must I meet to obtain a residence and work permit?",
+    "faqh3l1": "Conduct economic activity in a field registered in the country.",
+    "faqh3l2": "Employ at least 1/4 Croatian citizens compared to foreign workers, on a full-time and indefinite basis for the past 6 months.",
+    "faqh3l3": "Provide a certificate from the Tax Administration confirming no outstanding public debts, dated no earlier than the permit application submission.",
+    "faqh3l4": "Ensure no final convictions for labor-related or social security offenses.",
 
-    "faqh4":"Can the worker come immediately?",
-    "faqh4l1":"No. For third-country nationals, a work permit and visa are required, which can take 45 to 90 days depending on the efficiency of relevant institutions.",
-    "faqh4l2":"Document preparation: 4–10 days (employer-dependent).",
-    "faqh4l3":"Recruitment and selection: 1–30 days (up to 60 days for specialized roles)",
-    "faqh4l4":"Labor market test (if applicable): 15 days.",
-    "faqh4l5":"Work permit processing: 15–30 days.",
-    "faqh4l6":"Visa processing: 15–30 days.",
-    "faqh4l7":"Travel arrangements: 1–10 days."
-    
+    "faqh4": "Can the worker come immediately?",
+    "faqh4l1": "No. For third-country nationals, a work permit and visa are required, which can take 45 to 90 days depending on the efficiency of relevant institutions.",
+    "faqh4l2": "Document preparation: 4–10 days (employer-dependent).",
+    "faqh4l3": "Recruitment and selection: 1–30 days (up to 60 days for specialized roles)",
+    "faqh4l4": "Labor market test (if applicable): 15 days.",
+    "faqh4l5": "Work permit processing: 15–30 days.",
+    "faqh4l6": "Visa processing: 15–30 days.",
+    "faqh4l7": "Travel arrangements: 1–10 days."
   }
 }
