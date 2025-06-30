@@ -8,7 +8,7 @@ import ContactSection from "./ContactSection";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <HeroPage />
       <ServicesSection />
       <LogoGallery />
