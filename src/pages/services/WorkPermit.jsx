@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, File, Handshake, Users } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import ContactSection from "../home/ContactSection";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -400,6 +401,9 @@ const WorkPermit = () => {
             ))}
           </motion.div> */}
         </div>
+      </div>
+      <div>
+        <ContactSection />
       </div>
     </div>
   );

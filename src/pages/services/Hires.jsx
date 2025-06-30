@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, File, Handshake, Users } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import ContactSection from "../home/ContactSection";
 
 const Hires = () => {
   const location = useLocation();
@@ -334,24 +335,10 @@ const Hires = () => {
               </motion.div>
             ))}
           </motion.div>
-
-          {/* <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mt-20 flex justify-center space-x-4"
-          >
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className={`w-3 h-3 rounded-full ${
-                  item === 1 ? "bg-blue-600" : "bg-gray-300"
-                }`}
-              />
-            ))}
-          </motion.div> */}
         </div>
+      </div>
+      <div>
+        <ContactSection />
       </div>
     </div>
   );
