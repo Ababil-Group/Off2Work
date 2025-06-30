@@ -1,5 +1,15 @@
 import React from "react";
-import { CheckCircle2, Video, Mic, Users, CalendarCheck } from "lucide-react";
+import {
+  CheckCircle2,
+  Video,
+  Mic,
+  Users,
+  CalendarCheck,
+  Clock,
+  UserCheck,
+  Briefcase,
+  Globe,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import {
   fadeIn,
@@ -17,7 +27,6 @@ const WorkerSection = () => {
     t("home.partnerl3"),
   ];
 
-  // Floating bubbles configuration
   const floatingBubbles = [...Array(20)].map((_, i) => ({
     id: i,
     size: Math.random() * 6 + 2,
@@ -50,119 +59,175 @@ const WorkerSection = () => {
     },
   ];
 
+  const seasonalFeatures = [
+    {
+      icon: <Globe className="w-6 h-6 text-[#023a51]" />,
+      title: t("home.seasonalFeature1"),
+      description: t("home.seasonalFeatureDesc1"),
+    },
+    {
+      icon: <Briefcase className="w-6 h-6 text-[#023a51]" />,
+      title: t("home.seasonalFeature2"),
+      description: t("home.seasonalFeatureDesc2"),
+    },
+    {
+      icon: <UserCheck className="w-6 h-6 text-[#023a51]" />,
+      title: t("home.seasonalFeature3"),
+      description: t("home.seasonalFeatureDesc3"),
+    },
+    {
+      icon: <Clock className="w-6 h-6 text-[#023a51]" />,
+      title: t("home.seasonalFeature4"),
+      description: t("home.seasonalFeatureDesc4"),
+    },
+  ];
+
   return (
-    <div className="w-full relative overflow-hidden bg-gradient-to-b from-[#f8f9fa] to-[#e9ecef]">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 z-10 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.08 }}
-          transition={{ duration: 1.5 }}
-          className="absolute top-0 left-0 w-full h-full"
-        >
-          <img
-            src="/images/Off2work/1x/asset2.png"
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          {floatingBubbles.map(
-            (
-              bubble // Fixed the spelling here
-            ) => (
-              <motion.div
-                key={bubble.id}
-                initial={{ y: -50, opacity: 0 }}
-                animate={{
-                  y: "100vh",
-                  opacity: bubble.opacity,
-                  transition: {
-                    duration: bubble.duration,
-                    repeat: Infinity,
-                    delay: bubble.delay,
-                    ease: "linear",
-                  },
-                }}
-                className="absolute rounded-full bg-blue-400"
-                style={{
-                  width: `${bubble.size}px`,
-                  height: `${bubble.size}px`,
-                  left: `${bubble.x}%`,
-                }}
-              />
-            )
-          )}
+    <div className="w-full relative overflow-hidden">
+      {/* Seasonal Workers Section - Redesigned */}
+      <section className="relative py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-[#f0f8ff] to-[#e6f2ff]">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-[#023a51]/5 clip-path-polygon-[0_0,_100%_0,_100%_100%,_30%_100%]"></div>
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              animate={{
+                y: [0, -20, 0],
+                opacity: [0.1, 0.3, 0.1],
+                transition: {
+                  duration: 8 + Math.random() * 10,
+                  repeat: Infinity,
+                  delay: Math.random() * 5,
+                },
+              }}
+              className="absolute rounded-full bg-[#023a51]/20"
+              style={{
+                width: `${Math.random() * 10 + 5}px`,
+                height: `${Math.random() * 10 + 5}px`,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+            />
+          ))}
         </div>
-      </div>
 
-      {/* Seasonal Workers Section */}
-      <motion.section
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-        className="bg-[#3E3F48]/90 relative z-20 text-white py-16 px-6 md:px-20"
-      >
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Content Left */}
           <motion.div
-            variants={fadeIn("right", "tween", 0.1, 0.2)}
-            className="text-center md:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-8"
           >
-            <motion.h2
-              variants={textVariant(0.2)}
-              className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
-            >
+            <div className="inline-block bg-[#023a51]/10 px-4 py-2 rounded-full">
+              <p className="text-[#023a51] font-medium uppercase tracking-wider text-sm">
+                {t("home.seasonalSubtitle")}
+              </p>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-[#023a51] leading-tight">
               {t("home.seasonalwh")}
-            </motion.h2>
-            <motion.p
-              variants={textVariant(0.4)}
-              className="mb-8 text-lg md:text-xl leading-relaxed opacity-90"
-            >
+            </h2>
+
+            <p className="text-lg text-gray-700 leading-relaxed">
               {t("home.seasonalwp")}
-            </motion.p>
+            </p>
+
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+              {seasonalFeatures.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-[#023a51]/10 p-3 rounded-full">
+                      {feature.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg text-[#023a51] mb-1">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
             <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 10px 25px -5px rgba(2, 58, 81, 0.4)",
-              }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-[#023a51] hover:bg-[#035b7a] text-xl cursor-pointer hover:shadow-xl transition-all duration-300 text-white px-8 py-4 rounded-lg uppercase font-medium tracking-wide shadow-lg"
-              onClick={() => {
-                const section = document.querySelector("#get-in-touch");
-                section?.scrollIntoView({ behavior: "smooth" });
-              }}
+              className="mt-8 bg-[#023a51] hover:bg-[#035b7a] text-white px-8 py-4 rounded-lg font-medium tracking-wide shadow-lg transition-all duration-300 flex items-center space-x-2"
             >
-              {t("home.seasonalwbtn")}
+              <span>{t("home.seasonalwbtn")}</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </motion.button>
           </motion.div>
 
-          <motion.div variants={zoomIn(0.4, 1)} className="flex justify-center">
-            <div className="relative group">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-                className="absolute -inset-4 bg-blue-500/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-500"
-              ></motion.div>
-              <motion.img
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+          {/* Image Right */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="relative h-full min-h-[400px]"
+          >
+            <div className="absolute inset-0 bg-[#023a51]/10 rounded-3xl overflow-hidden transform rotate-1">
+              <img
                 src="/images/Off2work/seasonal-workers-from-our-network.jpeg"
-                alt="Seasonal Workers"
-                className="rounded-lg shadow-2xl relative w-full transform transition-transform duration-500 hover:scale-[1.03]"
+                alt="Seasonal Workers Network"
+                className="w-full h-full object-cover"
               />
+            </div>
+            <div className="absolute inset-0 bg-[#023a51]/10 rounded-3xl overflow-hidden transform -rotate-1 scale-95">
+              <img
+                src="/images/Off2work/seasonal-workers-from-our-network.jpeg"
+                alt="Seasonal Workers Network"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.02] transition-transform duration-500">
+              <img
+                src="/images/Off2work/seasonal-workers-from-our-network.jpeg"
+                alt="Seasonal Workers Network"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#023a51]/70 to-transparent flex items-end p-8">
+                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-xl max-w-md">
+                  <h3 className="text-2xl font-bold text-[#023a51] mb-2">
+                    {t("home.seasonalNetworkTitle")}
+                  </h3>
+                  <p className="text-gray-700">
+                    {t("home.seasonalNetworkDesc")}
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
-      </motion.section>
-
-      {/* Productivity Partner Section */}
+      </section>
       <section className="relative z-20 py-16 px-6 md:px-10 lg:px-20 bg-white overflow-hidden">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Animated background blobs */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 0.7 }}
@@ -251,9 +316,7 @@ const WorkerSection = () => {
         </div>
       </section>
 
-      {/* Live Interview Section */}
       <section className="relative z-20 py-24 px-6 md:px-20 text-white overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src="/images/Off2work/live-interview-service.jpg"
@@ -263,7 +326,6 @@ const WorkerSection = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#3E3F48]/90 to-[#023a51]/90"></div>
         </div>
 
-        {/* Content */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -284,7 +346,6 @@ const WorkerSection = () => {
             {t("home.liveInterp")}
           </motion.p>
 
-          {/* Interview Features Grid */}
           <motion.div
             variants={staggerContainer}
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
@@ -322,7 +383,6 @@ const WorkerSection = () => {
           </motion.button>
         </motion.div>
 
-        {/* Floating animated elements */}
         <motion.div
           animate={{
             y: [0, -15, 0],
