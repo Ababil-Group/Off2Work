@@ -55,7 +55,7 @@ const WorkerSection = () => {
           ))}
         </div>
       </div>
-
+      {/* lot of time consume why */}
       <motion.section
         variants={staggerContainer}
         initial="hidden"
@@ -64,7 +64,7 @@ const WorkerSection = () => {
         className="bg-[#3E3F48]/90 relative z-20 text-white py-16 px-6 md:px-20 flex flex-col md:flex-row items-center"
       >
         <motion.div
-          variants={fadeIn("right", "tween", 0.2, 0.5)}
+          variants={fadeIn("right", "tween", 0.1, 0.5)}
           className="md:w-1/2 text-center md:text-left"
         >
           <motion.h2

@@ -9,17 +9,15 @@ export const staggerContainer = (staggerChildren, delayChildren) => ({
 });
 
 export const textVariant = (delay) => ({
-  hidden: {
-    y: 50,
-    opacity: 0,
-  },
+  hidden: { y: 50, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
-      duration: 1.25,
-      delay: delay,
+      type: "tween",
+      ease: "easeOut",
+      duration: 0.8,
+      delay,
     },
   },
 });
@@ -52,10 +50,10 @@ export const zoomIn = (delay, duration) => ({
     scale: 1,
     opacity: 1,
     transition: {
-      type: 'tween',
+      type: "tween",
       delay,
       duration,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 });
