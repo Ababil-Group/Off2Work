@@ -31,24 +31,25 @@ const WorkerSection = () => {
     {
       icon: <Video className="w-8 h-8" />,
       title: t("home.liveFeature1"),
-      description:t("home.liveFeatured1"),
+      description: t("home.liveFeatured1"),
     },
     {
       icon: <Mic className="w-8 h-8" />,
       title: t("home.liveFeature2"),
-      description:t("home.liveFeatured2"),
+      description: t("home.liveFeatured2"),
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: t("home.liveFeature3"),
-      description:t("home.liveFeatured3"),
+      description: t("home.liveFeatured3"),
     },
     {
       icon: <CalendarCheck className="w-8 h-8" />,
       title: t("home.liveFeature4"),
-      description:t("home.liveFeatured4"),
+      description: t("home.liveFeatured4"),
     },
   ];
+
   return (
     <div className="w-full relative overflow-hidden bg-gradient-to-b from-[#f8f9fa] to-[#e9ecef]">
       {/* Animated background elements */}
@@ -67,28 +68,32 @@ const WorkerSection = () => {
         </motion.div>
 
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          {floatingBubbles.map((bubble) => (
-            <motion.div
-              key={bubble.id}
-              initial={{ y: -50, opacity: 0 }}
-              animate={{
-                y: "100vh",
-                opacity: bubble.opacity,
-                transition: {
-                  duration: bubble.duration,
-                  repeat: Infinity,
-                  delay: bubble.delay,
-                  ease: "linear",
-                },
-              }}
-              className="absolute rounded-full bg-blue-400"
-              style={{
-                width: `${bubble.size}px`,
-                height: `${bubble.size}px`,
-                left: `${bubble.x}%`,
-              }}
-            />
-          ))}
+          {floatingBubbles.map(
+            (
+              bubble // Fixed the spelling here
+            ) => (
+              <motion.div
+                key={bubble.id}
+                initial={{ y: -50, opacity: 0 }}
+                animate={{
+                  y: "100vh",
+                  opacity: bubble.opacity,
+                  transition: {
+                    duration: bubble.duration,
+                    repeat: Infinity,
+                    delay: bubble.delay,
+                    ease: "linear",
+                  },
+                }}
+                className="absolute rounded-full bg-blue-400"
+                style={{
+                  width: `${bubble.size}px`,
+                  height: `${bubble.size}px`,
+                  left: `${bubble.x}%`,
+                }}
+              />
+            )
+          )}
         </div>
       </div>
 
@@ -98,155 +103,152 @@ const WorkerSection = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="bg-[#3E3F48]/90 relative z-20 text-white py-16 px-6 md:px-20 flex flex-col md:flex-row items-center gap-12"
+        className="bg-[#3E3F48]/90 relative z-20 text-white py-16 px-6 md:px-20"
       >
-        <motion.div
-          variants={fadeIn("right", "tween", 0.1, 0.5)}
-          className="md:w-1/2 text-center md:text-left"
-        >
-          <motion.h2
-            variants={textVariant(0.2)}
-            className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <motion.div
+            variants={fadeIn("right", "tween", 0.1, 0.2)}
+            className="text-center md:text-left"
           >
-            {t("home.seasonalwh")}
-          </motion.h2>
-          <motion.p
-            variants={textVariant(0.4)}
-            className="mb-8 text-lg md:text-xl leading-relaxed opacity-90"
-          >
-            {t("home.seasonalwp")}
-          </motion.p>
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 10px 25px -5px rgba(2, 58, 81, 0.4)",
-            }}
-            whileTap={{ scale: 0.98 }}
-            className="bg-[#023a51] hover:bg-[#035b7a] text-xl cursor-pointer hover:shadow-xl transition-all duration-300 text-white px-8 py-4 rounded-lg uppercase font-medium tracking-wide shadow-lg"
-            onClick={() => {
-              const section = document.querySelector("#get-in-touch");
-              section?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            {t("home.seasonalwbtn")}
-          </motion.button>
-        </motion.div>
+            <motion.h2
+              variants={textVariant(0.2)}
+              className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+            >
+              {t("home.seasonalwh")}
+            </motion.h2>
+            <motion.p
+              variants={textVariant(0.4)}
+              className="mb-8 text-lg md:text-xl leading-relaxed opacity-90"
+            >
+              {t("home.seasonalwp")}
+            </motion.p>
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 25px -5px rgba(2, 58, 81, 0.4)",
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="bg-[#023a51] hover:bg-[#035b7a] text-xl cursor-pointer hover:shadow-xl transition-all duration-300 text-white px-8 py-4 rounded-lg uppercase font-medium tracking-wide shadow-lg"
+              onClick={() => {
+                const section = document.querySelector("#get-in-touch");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              {t("home.seasonalwbtn")}
+            </motion.button>
+          </motion.div>
 
-        <motion.div
-          variants={zoomIn(0.4, 1)}
-          className="md:w-1/2 flex justify-center"
-        >
-          <div className="relative group">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="absolute -inset-4 bg-blue-500/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-500"
-            ></motion.div>
-            <motion.img
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              src="/images/Off2work/seasonal-workers-from-our-network.jpeg"
-              alt="Seasonal Workers"
-              width={500}
-              height={300}
-              className="rounded-lg shadow-2xl relative transform transition-transform duration-500 hover:scale-[1.03]"
-            />
-          </div>
-        </motion.div>
+          <motion.div variants={zoomIn(0.4, 1)} className="flex justify-center">
+            <div className="relative group">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                className="absolute -inset-4 bg-blue-500/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-500"
+              ></motion.div>
+              <motion.img
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                src="/images/Off2work/seasonal-workers-from-our-network.jpeg"
+                alt="Seasonal Workers"
+                className="rounded-lg shadow-2xl relative w-full transform transition-transform duration-500 hover:scale-[1.03]"
+              />
+            </div>
+          </motion.div>
+        </div>
       </motion.section>
 
       {/* Productivity Partner Section */}
-      <section className="relative z-20 py-16 px-6 md:px-10 lg:px-20 flex flex-col md:flex-row items-center justify-evenly bg-white overflow-hidden">
-        {/* Animated background blobs */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.7 }}
-          transition={{ duration: 1.5 }}
-          className="absolute -top-20 -right-20 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"
-        ></motion.div>
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.7 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute -bottom-20 left-20 w-40 h-40 bg-[#023a51]/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"
-        ></motion.div>
+      <section className="relative z-20 py-16 px-6 md:px-10 lg:px-20 bg-white overflow-hidden">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Animated background blobs */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.7 }}
+            transition={{ duration: 1.5 }}
+            className="absolute -top-20 -right-20 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"
+          ></motion.div>
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.7 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+            className="absolute -bottom-20 left-20 w-40 h-40 bg-[#023a51]/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"
+          ></motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, type: "spring" }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="md:w-1/2 lg:w-1/3 mt-8 md:mt-0"
-        >
-          <div className="relative group">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.75 }}
-              transition={{ duration: 0.8 }}
-              className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-teal-900/5 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-500"
-            ></motion.div>
-            <motion.img
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              src="/images/Off2work/your-partner-in-boosting-productivity-and-growth.jpg"
-              alt="Productivity Partner"
-              width={400}
-              height={300}
-              className="relative rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-[1.03]"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, type: "spring" }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="md:w-[400px] text-center md:text-start mt-12 md:mt-0"
-        >
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl font-bold mb-6 text-[#023a51]"
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, type: "spring" }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="mt-8 md:mt-0"
           >
-            {t("home.partnerh")}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-8 text-lg text-gray-700 bg-gray-100/50 rounded-md p-4 leading-relaxed"
-          >
-            {t("home.partnerp")}
-          </motion.p>
-
-          <div className="space-y-4">
-            {features.map((feature, index) => (
+            <div className="relative group">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                viewport={{ once: true }}
-                className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group"
-              >
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 0.75 }}
+                transition={{ duration: 0.8 }}
+                className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-teal-900/5 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-500"
+              ></motion.div>
+              <motion.img
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                src="/images/Off2work/your-partner-in-boosting-productivity-and-growth.jpg"
+                alt="Productivity Partner"
+                className="relative rounded-lg shadow-lg transform transition-transform duration-500 group-hover:scale-[1.03] w-full"
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, type: "spring" }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center md:text-start mt-12 md:mt-0"
+          >
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-bold mb-6 text-[#023a51]"
+            >
+              {t("home.partnerh")}
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-8 text-lg text-gray-700 bg-gray-100/50 rounded-md p-4 leading-relaxed"
+            >
+              {t("home.partnerp")}
+            </motion.p>
+
+            <div className="space-y-4">
+              {features.map((feature, index) => (
                 <motion.div
-                  whileHover={{ rotate: 10, scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
+                  viewport={{ once: true }}
+                  className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group"
                 >
-                  <CheckCircle2 className="text-[#023a51] w-7 h-7 flex-shrink-0 mt-1 group-hover:text-[#035b7a] transition-colors" />
+                  <motion.div
+                    whileHover={{ rotate: 10, scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <CheckCircle2 className="text-[#023a51] w-7 h-7 flex-shrink-0 mt-1 group-hover:text-[#035b7a] transition-colors" />
+                  </motion.div>
+                  <p className="text-gray-700 text-base group-hover:text-gray-900 transition-colors">
+                    {feature}
+                  </p>
                 </motion.div>
-                <p className="text-gray-700 text-base group-hover:text-gray-900 transition-colors">
-                  {feature}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Live Interview Section */}
@@ -266,7 +268,7 @@ const WorkerSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="relative z-10 max-w-6xl mx-auto text-center"
+          className="relative z-10 max-w-screen-xl mx-auto text-center"
         >
           <motion.h2
             variants={textVariant(0.2)}
@@ -296,7 +298,8 @@ const WorkerSection = () => {
                 <div className="bg-[#023a51] w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
                   {feature.icon}
                 </div>
-                <h3 className="font-medium text-lg">{feature.title}</h3>
+                <h3 className="font-medium text-lg mb-2">{feature.title}</h3>
+                <p className="text-sm opacity-80">{feature.description}</p>
               </motion.div>
             ))}
           </motion.div>
