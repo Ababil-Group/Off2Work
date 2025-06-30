@@ -121,7 +121,7 @@ const WorkerSection = () => {
           className="md:w-1/2 lg:w-1/3 mt-8 md:mt-0"
         >
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-teal-400 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 to-teal-900/5 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
             <img
               src="/images/Off2work/your-partner-in-boosting-productivity-and-growth.jpg"
               alt="Productivity Partner"

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+
 const logos = [
   { src: "/images/logos/l1.png", alt: "Image" },
   { src: "/images/logos/l2.png", alt: "Image" },
@@ -8,7 +9,6 @@ const logos = [
   { src: "/images/logos/l5.png", alt: "Image" },
   { src: "/images/logos/l6.png", alt: "Image" },
   { src: "/images/logos/l7.png", alt: "Image" },
-  { src: "/images/logos/l8.png", alt: "Image" },
   { src: "/images/logos/l9.png", alt: "Image" },
   { src: "/images/logos/l10.png", alt: "Image" },
   { src: "/images/logos/l11.png", alt: "Image" },
@@ -16,42 +16,47 @@ const logos = [
   { src: "/images/logos/l13.png", alt: "Image" },
   { src: "/images/logos/l14.png", alt: "Image" },
 ];
+
 const LogoGallery = () => {
+  // Duplicate the array for infinite scroll effect
+  const scrollingLogos = [...logos, ...logos];
+
   return (
-    <section className="max-w-[1250px] mx-auto px-1 py-8 lg:py-16">
+    <section className="w-full overflow-hidden bg-white py-12">
       <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.1,
-            },
-          },
-        }}
-        className="grid grid-cols-4 md:grid-cols-7 gap-6 place-items-center"
+        className="flex gap-8 w-max animate-marquee"
+        style={{ animationDuration: "30s" }}
       >
-        {logos.map((logo, index) => (
+        {scrollingLogos.map((logo, index) => (
           <motion.div
             key={index}
-            variants={{
-              hidden: { opacity: 0, scale: 0.8 },
-              visible: { opacity: 1, scale: 1 },
+            whileHover={{
+              scale: 1.4,
+              rotate: 2,
+              boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
+              transition: { type: "spring", stiffness: 300 },
             }}
-            className="w-full max-w-[150px] h-20 flex items-center justify-center"
+            className="w-32 h-20 flex items-center justify-center"
           >
             <img
               src={logo.src}
               alt={logo.alt}
-              width={120}
-              height={70}
-              className="object-contain  transition-all duration-300 ease-in-out"
+              className="object-contain max-h-16 transition-all duration-300 cursor-pointer" 
             />
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Tailwind keyframes for infinite marquee */}
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee linear infinite;
+        }
+      `}</style>
     </section>
   );
 };
