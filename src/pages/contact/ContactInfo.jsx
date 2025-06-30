@@ -51,7 +51,7 @@ const ContactInfo = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="absolute top-0 left-0 w-full h-full"
                 title={`Map of ${office.title}`}
-              />
+              /> 
             </div>
 
             <div className="p-6">

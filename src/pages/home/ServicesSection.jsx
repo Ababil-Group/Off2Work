@@ -79,7 +79,7 @@ const ServicesSection = () => {
           <div className="p-6">
             <div className="flex items-center space-x-4 border-b border-red-400 pb-4">
               <div className="p-2 bg-purple-100 rounded-full">
-                <TrendingUp className="w-8 h-8 text-[#642D91]" />
+                <TrendingUp className="w-8 h-8 text-[#623488]" />
               </div>
               <h3 className="text-xl font-bold text-[#023a51]">
                 {t("home.subserviceh2")}
