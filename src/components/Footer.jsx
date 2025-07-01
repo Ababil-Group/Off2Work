@@ -26,6 +26,13 @@ const Footer = () => {
                 height={40}
               />
             </Link>
+
+            <p className="mt-4 text-xl text-[#262930]">
+              {t("footer.footert1")}
+            </p>
+            <p className="mt-1 text-base text-[#262930]">
+              {t("footer.footert2")}
+            </p>
             <div className="flex items-center gap-2 mt-3">
               <Link
                 to={"https://www.facebook.com/off2work"}
@@ -70,12 +77,6 @@ const Footer = () => {
                 <AiFillTikTok className="w-8 h-8 p-1 bg-gray-600 text-white hover:bg-blue-900 rounded-md hover:text-white hover:translate-y-2 transition-transform duration-300 hover:shadow-2xl shadow-gray-400" />
               </Link>
             </div>
-            <p className="mt-4 text-xl text-[#262930]">
-              {t("footer.footert1")}
-            </p>
-            <p className="mt-1 text-base text-[#262930]">
-              {t("footer.footert2")}
-            </p>
           </div>
 
           <div className="flex text-xl justify-evenly gap-4 space-y-2 text-[#063556]">
