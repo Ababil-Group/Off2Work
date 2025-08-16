@@ -107,14 +107,14 @@ function App() {
       {showScrollButton && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-[#6A3494] text-white p-2 cursor-pointer rounded-full shadow-lg hover:bg-primary-dark transition-colors z-50"
+          className="fixed bottom-8 right-8 text-white p-2 cursor-pointer border-2 border-[#6A3494] rounded-md shadow-lg hover:bg-primary-dark transition-colors z-50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <FaArrowUp className="animate-pulse size-6" />
+          <FaArrowUp className="animate-pulse size-6 text-gray-950" />
         </motion.button>
       )}
     </>

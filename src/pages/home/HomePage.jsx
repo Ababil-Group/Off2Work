@@ -5,12 +5,14 @@ import LogoGallery from "./LogoGallery";
 import WorkerSection from "./WorkerSection";
 import HiringProcess from "./HiringProcess";
 import ContactSection from "./ContactSection";
+import PartnerService from "./PartnerService";
 
 const HomePage = () => {
   return (
     <div className="min-h-screen">
       <HeroPage />
       <ServicesSection />
+      <PartnerService />
       <LogoGallery />
       <WorkerSection />
       <HiringProcess />

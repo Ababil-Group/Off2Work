@@ -1,6 +1,7 @@
 import React from "react";
 import { Clock, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { FaPhone } from "react-icons/fa";
 
 const ContactInfo = () => {
   const { t } = useTranslation();
@@ -27,6 +28,14 @@ const ContactInfo = () => {
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.2416664982293!2d115.85465307578193!3d-31.954339922463557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32bad5de6852c1%3A0x2b092f23904c0a!2s100%20St%20Georges%20Terrace%2C%2025%2F108%20St%20Georges%20Terrace%2C%20Perth%20WA%206000%2C%20Australia!5e0!3m2!1sen!2sbd!4v1747725932198!5m2!1sen!2sbd",
       hours: "8:00 AM – 4:00 PM",
     },
+    {
+      title: "Croatia Office",
+      address: "Ul. Hrvoja Macanovića 44A, 10000, Zagreb, Croatia",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2322.033613464289!2d15.925821375473554!3d45.78935821168599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6af0454f1b1%3A0xa4887f3451e4362d!2sUl.%20Hrvoja%20Macanovi%C4%87a%2044%2C%2010000%2C%20Zagreb%2C%20Croatia!5e1!3m2!1sen!2sbd!4v1755352386306!5m2!1sen!2sbd",
+      hours: "8:00 AM – 4:00 PM",
+      phone: "‪+385 91 7831 699",
+    },
   ];
 
   return (
@@ -37,7 +46,7 @@ const ContactInfo = () => {
         {t("contact.locationhl")}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {offices.map((office, index) => (
           <div
             key={index}
@@ -51,7 +60,7 @@ const ContactInfo = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="absolute top-0 left-0 w-full h-full"
                 title={`Map of ${office.title}`}
-              /> 
+              />
             </div>
 
             <div className="p-6">
@@ -78,6 +87,16 @@ const ContactInfo = () => {
                     <p className="text-gray-600">{office.hours}</p>
                   </div>
                 </div>
+                {office.phone && (
+                  <div className="flex items-center gap-4">
+                    <div className="bg-blue-100 p-3 rounded-full">
+                      <FaPhone className="text-blue-500 w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-gray-600">{office.phone}</p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

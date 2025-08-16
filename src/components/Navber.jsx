@@ -189,7 +189,7 @@ const Navbar = () => {
                     {item.children ? (
                       <>
                         <div className="hidden lg:block relative group">
-                          <div className="flex items-center space-x-1 py-2 text-[#0f2a47] hover:text-blue-600 cursor-pointer">
+                          <div className="flex items-center space-x-1 py-2 text-[#0f2a47]/90 hover:text-[#0f2a47] cursor-pointer">
                             <span>{item.title}</span>
                             <ChevronDown className="h-4 w-4" />
                           </div>
@@ -212,7 +212,7 @@ const Navbar = () => {
                         <div className="lg:hidden">
                           <button
                             onClick={() => toggleSubmenu(index)}
-                            className={`flex items-center justify-between w-full py-3 text-[#0f2a47] hover:text-blue-600 cursor-pointer ${
+                            className={`flex items-center justify-between w-full py-3 text-[#0f2a47]/90 hover:text-[#0f2a47] cursor-pointer ${
                               currentPath === item.href ||
                               item.children.some(
                                 (child) => currentPath === child.href

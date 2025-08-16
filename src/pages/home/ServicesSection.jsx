@@ -122,7 +122,7 @@ const ServicesSection = () => {
         </motion.div>
       </div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -143,7 +143,7 @@ const ServicesSection = () => {
             {t("home.serviceswtbtn")}
           </Link>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
