@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer, textVariant } from "./staggerContainer";
 import { useTranslation } from "react-i18next";
+import { FaPhone } from "react-icons/fa6";
 
 const ContactSection = () => {
   const [workerCount, setWorkerCount] = useState(1);
@@ -61,6 +62,24 @@ const ContactSection = () => {
                     Municipiul Ploieşti, Strada MIHAI BRAVU, Nr. 239, Bloc C4,
                     Ap. 71, Judet Prahova
                   </Link>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="p-4 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300"
+                >
+                  <p className="text-lg font-bold text-gray-300 flex items-center gap-3">
+                    <span className="text-blue-400">
+                      <MapPin />
+                    </span>
+                    Croatia Office
+                  </p>
+                  <Link href={""} className="text-lg text-gray-400 ">
+                    Ul. Hrvoja Macanovića 44A, 10000, Zagreb, Croatia
+                  </Link>
+                  <div className="flex items-center gap-2">
+                    <FaPhone />
+                    ‪+385 91 7831 699
+                  </div>
                 </motion.div>
 
                 <motion.div

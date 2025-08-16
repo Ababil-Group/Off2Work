@@ -153,7 +153,7 @@ const Footer = () => {
                 <div className="flex items-start">
                   <FaMapMarkerAlt className="text-primary mt-1 mr-2 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-white">
+                    <h4 className="font-semibold text-white/80">
                       {office.country}
                     </h4>
                     <p className="text-gray-400 text-sm">{office.address}</p>
