@@ -166,6 +166,10 @@ const WorkerSection = () => {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                const section = document.querySelector("#get-in-touch");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="mt-8 bg-[#652D90] hover:bg-[#5e248a] text-white px-8 py-4 rounded-lg font-medium tracking-wide shadow-lg transition-all duration-300 cursor-pointer flex items-center space-x-2"
             >
               <span>{t("home.seasonalwbtn")}</span>

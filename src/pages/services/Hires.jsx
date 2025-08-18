@@ -275,13 +275,49 @@ const Hires = () => {
           >
             <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6">
               {t("service.serviceexploreh")}{" "}
-              <span className="text-blue-600">
+              <span className="text-[#652D90]">
                 {t("service.serviceexplorehh")}
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               {t("service.serviceexplorep")}
             </p>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12"
+            >
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{ y: -10 }}
+                  className={`${service.gradient} rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden relative border border-gray-100`}
+                >
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  <Link
+                    to={service.link}
+                    className="relative z-10 cursor-pointer"
+                  >
+                    <div className="mb-6 p-4 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-sm">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6">{service.description}</p>
+                    <div className="flex items-center text-[#652D90] font-medium group-hover:text-blue-700 transition-colors duration-300">
+                      {service.buttonText}
+                      <ArrowRight className="ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0" />
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -289,7 +325,7 @@ const Hires = () => {
             >
               <Link
                 to="/areas-of-work/#services-area"
-                className="px-8 py-3 inline-block bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-300 mx-auto"
+                className="px-8 py-3 inline-block bg-[#652D90] text-white font-medium rounded-lg hover:bg-[#561686] transition-colors duration-300 mx-auto"
               >
                 <span className="flex items-center justify-center">
                   {t("service.serviceexplorebtn")}
@@ -297,42 +333,6 @@ const Hires = () => {
                 </span>
               </Link>
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -10 }}
-                className={`${service.gradient} rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden relative border border-gray-100`}
-              >
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                <Link
-                  to={service.link}
-                  className="relative z-10 cursor-pointer"
-                >
-                  <div className="mb-6 p-4 bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-sm">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
-                  <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700 transition-colors duration-300">
-                    {service.buttonText}
-                    <ArrowRight className="ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-1 group-hover:translate-x-0" />
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </div>
