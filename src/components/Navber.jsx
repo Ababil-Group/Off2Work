@@ -118,14 +118,14 @@ const Navbar = () => {
                 <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-6 mb-2 lg:mb-0 border-b border-gray-200 py-3">
                   <Link
                     to="/contact/#location"
-                    className="flex items-center text-sm text-[#0f2a47] hover:underline"
+                    className="flex items-center text-sm text-[#0f2a47] font-medium hover:underline"
                   >
                     <MapPin className="mr-1 h-4 w-4" />
                     {t("header.location")}
                   </Link>
                   <Link
                     to="/contact/#faqs"
-                    className="text-sm text-[#0f2a47] hover:underline"
+                    className="text-sm text-[#0f2a47] font-medium hover:underline"
                   >
                     {t("header.faq")}
                   </Link>
@@ -133,19 +133,19 @@ const Navbar = () => {
 
                 <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-6 border-b border-gray-200 py-3">
                   <Link
-                    to="tel:094583948"
-                    className="flex items-center text-sm text-[#0f2a47] hover:underline"
+                    to="tel:+385 91 7831 699"
+                    className="flex items-center text-sm text-[#0f2a47] font-medium hover:underline"
                   >
                     <Phone className="mr-1 h-4 w-4" />
                     {t("header.call_us")}
                   </Link>
-                  <Link
-                    to="mailto:info@thconsulting.hr"
-                    className="flex items-center text-sm text-[#0f2a47] hover:underline"
+                  <a
+                    href="mailto:contact@off2.work"
+                    className="flex items-center text-sm text-[#0f2a47] font-medium hover:underline"
                   >
                     <Mail className="mr-1 h-4 w-4" />
                     {t("header.contact")}
-                  </Link>
+                  </a>
                   <div className="flex space-x-4">
                     <button
                       onClick={() => handleLanguageClick("en")}
@@ -189,7 +189,7 @@ const Navbar = () => {
                     {item.children ? (
                       <>
                         <div className="hidden lg:block relative group">
-                          <div className="flex items-center space-x-1 py-2 text-[#0f2a47]/90 hover:text-[#0f2a47] cursor-pointer">
+                          <div className="flex items-center font-medium space-x-1 py-2 text-[#0f2a47] hover:text-[#0f2a47] cursor-pointer">
                             <span>{item.title}</span>
                             <ChevronDown className="h-4 w-4" />
                           </div>
@@ -198,7 +198,7 @@ const Navbar = () => {
                               <Link
                                 key={child.href}
                                 to={child.href}
-                                className="flex items-center px-4 py-2 text-[#0f2a47] hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                                className="flex items-center px-4 py-2 font-medium text-[#0f2a47] hover:bg-gray-50 hover:text-[#222e3b] transition-colors"
                               >
                                 {child.icon && (
                                   <span className="mr-2">{child.icon}</span>
@@ -212,13 +212,13 @@ const Navbar = () => {
                         <div className="lg:hidden">
                           <button
                             onClick={() => toggleSubmenu(index)}
-                            className={`flex items-center justify-between w-full py-3 text-[#0f2a47]/90 hover:text-[#0f2a47] cursor-pointer ${
+                            className={`flex items-center justify-between w-full py-3 text-[#0f2a47]/90 hover:text-[#0f2a47] cursor-pointer font-medium ${
                               currentPath === item.href ||
                               item.children.some(
                                 (child) => currentPath === child.href
                               )
-                                ? "font-bold border-b-2 border-[#0f2a47]"
-                                : ""
+                                ? "font-bold border-b-2 border-t-2 border-[#0f2a47]"
+                                : "font-medium"
                             }`}
                           >
                             <span>{item.title}</span>
@@ -237,7 +237,7 @@ const Navbar = () => {
                               <Link
                                 key={child.href}
                                 to={child.href}
-                                className={`flex items-center px-4 py-2 text-[#0f2a47] hover:bg-gray-50 hover:text-blue-600 transition-colors ${
+                                className={`flex items-center px-4 py-2 text-[#0f2a47] hover:bg-gray-50 hover:text-[#222e3b] transition-colors ${
                                   currentPath === child.href
                                     ? "font-medium bg-gray-100"
                                     : ""
@@ -256,10 +256,10 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={item.href}
-                        className={`block py-2 text-[#0f2a47] hover:text-blue-600 ${
+                        className={`block py-2 text-[#0f2a47] hover:text-[#222e3b] font-medium ${
                           currentPath === item.href
-                            ? "font-bold border-b-2 border-[#0f2a47]"
-                            : ""
+                            ? "font-bold border-b-2 border-t-2 border-[#0f2a47]"
+                            : "hover:border-b-2 hover:border-t-2 hover:border-[#222e3b]"
                         }`}
                         onClick={() => setIsOpen(false)}
                       >
@@ -270,7 +270,7 @@ const Navbar = () => {
                 ))}
                 <Link
                   to="/contact"
-                  className="inline-block bg-[#0f2a47] text-center text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors mt-2 lg:mt-0"
+                  className="inline-block bg-[#0f2a47] text-center text-white font-medium px-8 py-3 rounded-full hover:bg-[#652D90] transition-colors mt-2 lg:mt-0"
                   onClick={() => setIsOpen(false)}
                 >
                   {t("header.contact_us")}

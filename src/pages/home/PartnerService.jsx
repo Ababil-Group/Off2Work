@@ -16,7 +16,7 @@ const PartnerService = () => {
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl max-w-4xl mx-auto font-bold text-gray-900 mb-6">
           {t("home.partnerh1")}
-          <span className="text-blue-600">{t("home.partnerh2")}</span>
+          <span className="text-[#652D90]">{t("home.partnerh2")}</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           {t("home.partnerhp")}
@@ -41,38 +41,38 @@ const PartnerService = () => {
       </div>
 
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+        <h2 className="text-3xl font-bold text-center text-[#652D90] mb-12">
           {t("home.partnerforce")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
-              icon: <FaHandshake className="w-8 h-8 text-[#023A51]" />,
+              icon: <FaHandshake className="w-8 h-8 text-[#652D90]" />,
               title: t("home.partnerserh1"),
               description: t("home.partnerserp1"),
             },
             {
-              icon: <FaUserCheck className="w-8 h-8 text-[#023A51]" />,
+              icon: <FaUserCheck className="w-8 h-8 text-[#652D90]" />,
               title: t("home.partnerserh2"),
               description: t("home.partnerserp2"),
             },
             {
-              icon: <FaGlobeAmericas className="w-8 h-8 text-[#023A51]" />,
+              icon: <FaGlobeAmericas className="w-8 h-8 text-[#652D90]" />,
               title: t("home.partnerserh3"),
               description: t("home.partnerserp3"),
             },
             {
-              icon: <FaShieldAlt className="w-8 h-8 text-[#023A51]" />,
+              icon: <FaShieldAlt className="w-8 h-8 text-[#652D90]" />,
               title: t("home.partnerserh4"),
               description: t("home.partnerserp4"),
             },
             {
-              icon: <FaChartLine className="w-8 h-8 text-[#023A51]" />,
+              icon: <FaChartLine className="w-8 h-8 text-[#652D90]" />,
               title: t("home.partnerserh5"),
               description: t("home.partnerserp5"),
             },
             {
-              icon: <FaHandshake className="w-8 h-8 text-[#023A51]" />,
+              icon: <FaHandshake className="w-8 h-8 text-[#652D90]" />,
               title: t("home.partnerserh6"),
               description: t("home.partnerserp6"),
             },
@@ -92,7 +92,7 @@ const PartnerService = () => {
       </div>
 
       <div className="bg-primary/10 rounded-xl p-12 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">
+        <h2 className="text-3xl font-bold text-[#652D90] mb-6">
           {t("home.partnerchoh")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
@@ -111,7 +111,7 @@ const PartnerService = () => {
             },
           ].map((item, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-              <p className="text-4xl font-bold text-primary mb-2">
+              <p className="text-4xl font-bold text-[#652D90] mb-2">
                 {item.stat}
               </p>
               <p className="text-gray-700">{item.description}</p>
@@ -120,7 +120,7 @@ const PartnerService = () => {
         </div>
         <Link
           to="/services/trustedworkforce"
-          className="bg-[#3E4247]/90 hover:bg-[#3E4247] text-white px-8 py-3 rounded-lg text-xl font-medium transition-colors duration-300"
+          className="bg-[#3E4247]/90 hover:bg-[#652D90] text-white px-8 py-3 rounded-lg text-xl font-medium transition-colors duration-300"
         >
           {t("home.serviceswtbtn")}
         </Link>

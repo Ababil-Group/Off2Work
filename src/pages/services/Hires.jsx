@@ -118,7 +118,6 @@ const Hires = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -138,10 +137,10 @@ const Hires = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-start max-w-screen-md mx-auto h-[400px] mt-8 p-4 relative bg-white/50 backdrop-blur-sm rounded-xl z-20"
         >
-          <p className="text-2xl text-[#023a51] my-4">
+          <p className="text-xl font-bold text-[#023a51] my-4">
             {t("service.servicehireh")}
           </p>
-          <p className="text-4xl md:text-5xl text-[#023a51] font-bold my-4">
+          <p className="text-4xl md:text-5xl text-[#652D90] font-bold my-4">
             {t("service.servicehirehs")}
           </p>
           <p className="text-xl text-gray-700">{t("service.servicehirep")}</p>
@@ -155,10 +154,10 @@ const Hires = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6 p-4"
+          className="text-4xl font-bold max-w-4xl mx-auto text-gray-900 sm:text-5xl mb-6 p-4 text-center"
         >
           {t("service.servicehirsubhf")}
-          <span className="text-blue-600">{t("service.servicehirsubhh")}</span>
+          <span className="text-[#652D90]">{t("service.servicehirsubhh")}</span>
           {t("service.servicehirsubhl")}
         </motion.h2>
 
@@ -219,11 +218,11 @@ const Hires = () => {
           >
             <h2
               id="flexable-worksolutaion"
-              className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6"
+              className="text-4xl font-bold text-center text-gray-900 sm:text-5xl mb-6"
             >
               {t("service.servicetaibh")}
-              <span className="text-blue-600">
-                {t("service.servicetaibhh")}
+              <span className="text-[#652D90]">
+                {t("service.servicetaibhh")}{" "}
               </span>
               {t("service.servicetaibl")}
             </h2>

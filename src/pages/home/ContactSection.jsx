@@ -9,10 +9,7 @@ import { FaPhone } from "react-icons/fa6";
 const ContactSection = () => {
   const [workerCount, setWorkerCount] = useState(1);
   const { t } = useTranslation();
-  const handleSliderChange = (value) => {
-    setWorkerCount(value[0]);
-  };
-
+ 
   return (
     <section
       id="get-in-touch"
@@ -76,10 +73,6 @@ const ContactSection = () => {
                   <Link href={""} className="text-lg text-gray-400 ">
                     Ul. Hrvoja Macanovića 44A, 10000, Zagreb, Croatia
                   </Link>
-                  <div className="flex items-center gap-2">
-                    <FaPhone />
-                    ‪+385 91 7831 699
-                  </div>
                 </motion.div>
 
                 <motion.div
@@ -114,7 +107,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* <motion.div
+            <motion.div
               whileHover={{ scale: 1.01 }}
               className="p-4 rounded-lg bg-gray-800/50"
             >
@@ -122,14 +115,14 @@ const ContactSection = () => {
               <div className="space-y-3">
                 <p className="flex items-center gap-3 text-gray-200 hover:text-blue-400 transition-colors">
                   <Mail className="w-5 h-5 text-blue-400" />
-                  info@yourcompany.com
+                  contact@off2.work
                 </p>
                 <p className="flex items-center gap-3 text-gray-200 hover:text-blue-400 transition-colors">
                   <Phone className="w-5 h-5 text-blue-400" />
-                  +123-456-7890
+                  +385 91 7831 699
                 </p>
               </div>
-            </motion.div> */}
+            </motion.div>
 
             <motion.div
               whileHover={{ scale: 1.01 }}
@@ -176,11 +169,21 @@ const ContactSection = () => {
               </div>
 
               <motion.form
+                action="https://formsubmit.co/d2fafb7ddeae73c2f45e67a4d9e54b71"
+                method="POST"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="space-y-6"
               >
+                {/* Hidden inputs (optional) */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://off2.work/thank-you"
+                />
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="fullName" className="text-gray-700">
@@ -188,6 +191,7 @@ const ContactSection = () => {
                     </label>
                     <input
                       id="fullName"
+                      name="name"
                       placeholder={t("contact.name")}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
@@ -199,6 +203,7 @@ const ContactSection = () => {
                     </label>
                     <input
                       id="mobile"
+                      name="phone"
                       placeholder="091 234 5678*"
                       type="tel"
                       required
@@ -214,6 +219,7 @@ const ContactSection = () => {
                     </label>
                     <input
                       id="email"
+                      name="email"
                       placeholder="ime@mail.com*"
                       type="email"
                       required
@@ -226,6 +232,7 @@ const ContactSection = () => {
                     </label>
                     <input
                       id="company"
+                      name="company"
                       placeholder={t("contact.conpany")}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
@@ -246,6 +253,7 @@ const ContactSection = () => {
                       min="1"
                       max="150"
                       value={workerCount}
+                      name="employees"
                       onChange={(e) => setWorkerCount(e.target.value)}
                       className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                     />
@@ -258,6 +266,7 @@ const ContactSection = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     placeholder={t("contact.textare")}
                     rows={4}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
@@ -268,7 +277,7 @@ const ContactSection = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#063556] to-[#0a5485] hover:from-[#0a5485] hover:to-[#063556] text-white py-3 px-6 rounded-lg font-medium flex items-center justify-center transition-all duration-300 shadow-lg"
+                  className="w-full bg-gradient-to-r from-[#652D90] to-[#652D90]/90 hover:from-[#5e248a] hover:to-[#5e248a]/90 text-white py-3 px-6 rounded-lg font-medium flex items-center justify-center transition-all duration-300 shadow-lg"
                 >
                   <Send className="mr-2 h-5 w-5" /> {t("contact.contactbtn")}
                 </motion.button>

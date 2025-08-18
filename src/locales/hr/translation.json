@@ -405,5 +405,11 @@
     "faqh4l5": "Obrada dozvole za rad: 15–30 dana.",
     "faqh4l6": "Obrada vize: 15–30 dana.",
     "faqh4l7": "Organizacija putovanja: 1–10 dana."
+  },
+  "thankyou": {
+    "title": "Hvala Vam!",
+    "message": "Primili smo Vašu poruku i javit ćemo Vam se uskoro.",
+    "contact_title": "Trebate hitnu pomoć?",
+    "back_button": "Povratak na početnu"
   }
 }

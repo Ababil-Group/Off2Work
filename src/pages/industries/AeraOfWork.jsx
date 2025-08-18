@@ -66,7 +66,7 @@ const TextCard = ({ title, description, services }) => {
       transition={{ duration: 0.6 }}
       className="w-full md:w-1/2 p-8 bg-white flex flex-col justify-center rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
     >
-      <h2 className="text-3xl font-bold text-[#003459] mb-4">{title}</h2>
+      <h2 className="text-3xl font-bold text-[#652D90] mb-4">{title}</h2>
       <p className="text-gray-600 mb-6">{description}</p>
 
       <div className="space-y-4">
@@ -144,7 +144,7 @@ const AeraOfWork = () => {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl text-[#023a51] my-4"
+            className="text-xl font-bold text-[#023a51] my-4"
           >
             {t("areaofwork.aowht")}
           </motion.p>
@@ -153,7 +153,7 @@ const AeraOfWork = () => {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-4xl md:text-5xl text-[#023a51] font-bold my-4"
+            className="text-4xl md:text-5xl text-[#652D90] font-bold my-4"
           >
             {t("areaofwork.aowhs")}
           </motion.h1>
@@ -267,9 +267,9 @@ const AeraOfWork = () => {
       >
         {t("areaofwork.tuastc")}
       </motion.div>
-
-      <ServicesSection />
       <LogoGallery />
+      <ServicesSection />
+
       <ContactSection />
     </div>
   );

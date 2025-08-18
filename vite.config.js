@@ -4,4 +4,16 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: "./",
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    emptyOutDir: true,
+    minify: true,
+    sourcemap: false,
+    chunkSizeWarningLimit: 1600,
+  },
+  server: {
+    historyApiFallback: true,
+  },
 });

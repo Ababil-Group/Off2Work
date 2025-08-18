@@ -365,7 +365,8 @@
     "vissionp3": "Our focus is on long-term collaboration and continuous improvement.",
     "bild": " Building Workforce Excellence",
     "gobal": "Global Reach",
-    "team": "Our Team"
+    "team": "Our Team",
+    "our_offices": "Our Offices"
   },
   "footer": {
     "footert1": "Trust Off2 Work to Optimize Your Workforce",
@@ -377,7 +378,7 @@
     "abous": "About Us",
     "support": "Support",
     "faqs": "FAQs",
-    "cdum": "Contact Information",
+    "cdum": "Contact Us",
     "address": "Addresses"
   },
   "faqs": {
@@ -407,5 +408,12 @@
     "faqh4l5": "Work permit processing: 15–30 days.",
     "faqh4l6": "Visa processing: 15–30 days.",
     "faqh4l7": "Travel arrangements: 1–10 days."
+  },
+
+  "thankyou": {
+    "title": "Thank You!",
+    "message": "We've received your message and will get back to you soon.",
+    "contact_title": "Need immediate assistance?",
+    "back_button": "Back to Home"
   }
 }

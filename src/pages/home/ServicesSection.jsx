@@ -42,7 +42,7 @@ const ServicesSection = () => {
         className="text-4xl md:text-5xl font-bold text-center text-[#3E4247] uppercase mb-12"
       >
         {t("home.serviceh")}{" "}
-        <span className="text-blue-600">{t("home.servicehh")}</span>
+        <span className="text-[#652D90]">{t("home.servicehh")}</span>
         {t("home.servicehl")}
       </motion.h2>
 
@@ -115,7 +115,7 @@ const ServicesSection = () => {
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             to="/services/hires"
-            className="bg-[#3E4247] hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-xl font-medium transition-colors duration-300"
+            className="bg-[#3E4247] hover:bg-[#652D90] text-white px-8 py-3 rounded-lg text-xl font-medium transition-colors duration-300"
           >
             {t("home.subservicebtn")}
           </Link>

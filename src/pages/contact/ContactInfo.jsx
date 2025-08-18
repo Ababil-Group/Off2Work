@@ -42,7 +42,7 @@ const ContactInfo = () => {
     <div className="max-w-[1280px] mx-auto px-4 py-12 md:py-20">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
         {t("contact.locationh")}
-        <span className="text-blue-600">{t("contact.locationhh")}</span>
+        <span className="text-[#652D90]">{t("contact.locationhh")}</span>
         {t("contact.locationhl")}
       </h2>
 

@@ -14,6 +14,7 @@ import AboutUpPage from "./pages/about/AboutUpPage";
 import Contact from "./pages/contact/Contact";
 import TrustedWorkForce from "./pages/services/TrustedWorkForce";
 import WorkPermit from "./pages/services/WorkPermit";
+import ThankYouPage from "./components/ThankYouPage";
 
 NProgress.configure({
   minimum: 0.3,
@@ -100,6 +101,7 @@ function App() {
           <Route path="/client-success-stories" element={<Referemces />} />
           <Route path="/about-us" element={<AboutUpPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

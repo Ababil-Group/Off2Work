@@ -18,6 +18,7 @@ import {
 import LogoGallery from "../home/LogoGallery";
 import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
+import ContactSection from "../home/ContactSection";
 
 const References = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -171,12 +172,12 @@ const References = () => {
           <motion.div
             initial={{ width: 48 }}
             whileHover={{ width: 96 }}
-            className="h-1 bg-blue-600 mb-6"
+            className="h-1 bg-[#222e3b] mb-6"
           ></motion.div>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="self-start px-6 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg font-medium transition-all duration-300 hover:bg-blue-600 hover:text-white hover:border-blue-600"
+            className="self-start px-6 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg font-medium transition-all duration-300 hover:bg-[#222e3b] hover:text-white hover:border-[#222e3b]"
           >
             <a href={industry.link}>Learn more</a>
           </motion.button>
@@ -200,13 +201,13 @@ const References = () => {
         }}
         className="h-[500px] w-full flex items-center justify-center relative"
       >
-      <div className="absolute inset-0 bg-gray-700/10 z-0"></div>
+        <div className="absolute inset-0 bg-gray-700/10 z-0"></div>
         <div className="text-start max-w-screen-md mx-auto h-[400px] bg-white/50 backdrop-blur-sm rounded-xl mt-8 p-4 relative z-20">
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={heroInView ? { y: 0, opacity: 1 } : {}}
             transition={{ delay: 0.2 }}
-            className="text-2xl text-[#023a51] my-4"
+            className="text-xl text-[#023a51] font-bold my-4"
           >
             {t("clienstory.csht")}
           </motion.p>
@@ -214,7 +215,7 @@ const References = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={heroInView ? { y: 0, opacity: 1 } : {}}
             transition={{ delay: 0.4 }}
-            className="text-4xl md:text-5xl text-[#023a51] font-bold my-4"
+            className="text-4xl md:text-5xl text-[#652D90] font-bold my-4"
           >
             {t("clienstory.cshs")}
           </motion.h1>
@@ -240,7 +241,7 @@ const References = () => {
           >
             <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
               {t("clienstory.cssubhf")}{" "}
-              <span className="text-blue-600">{t("clienstory.cssubhh")}</span>
+              <span className="text-[#652D90]">{t("clienstory.cssubhh")}</span>
             </h2>
             <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
               {t("clienstory.cssubp")}
@@ -257,7 +258,7 @@ const References = () => {
                 transition={{ duration: 0.5 }}
                 className="bg-white p-10 rounded-3xl shadow-xl relative overflow-hidden"
               >
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#222e3b] to-[#4f5f70]"></div>
                 <Quote className="absolute top-6 right-6 text-blue-100 text-6xl" />
 
                 <div className="relative z-10">
@@ -274,7 +275,7 @@ const References = () => {
                       </motion.span>
                       {testimonials[currentIndex].name}
                     </p>
-                    <p className="text-blue-600">
+                    <p className="text-[#222e3b]">
                       {testimonials[currentIndex].company}
                     </p>
                   </div>
@@ -288,7 +289,7 @@ const References = () => {
               onClick={goToPrev}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white p-3 rounded-full shadow-md hover:bg-blue-50 transition-colors duration-300"
             >
-              <ChevronLeft className="text-blue-600" />
+              <ChevronLeft className="text-[#222e3b]" />
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -296,7 +297,7 @@ const References = () => {
               onClick={goToNext}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white p-3 rounded-full shadow-md hover:bg-blue-50 transition-colors duration-300"
             >
-              <ChevronRight className="text-blue-600" />
+              <ChevronRight className="text-[#222e3b]" />
             </motion.button>
 
             <div className="flex justify-center mt-8 space-x-2">
@@ -309,7 +310,7 @@ const References = () => {
                   }}
                   whileHover={{ scale: 1.2 }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? "bg-blue-600 w-6" : "bg-gray-300"
+                    index === currentIndex ? "bg-[#222e3b] w-6" : "bg-gray-300"
                   }`}
                 />
               ))}
@@ -323,7 +324,7 @@ const References = () => {
           >
             <a
               href={"/contact"}
-              className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-lg font-semibold rounded-xl hover:shadow-xl transition-all duration-300 shadow-lg"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-[#652D90] to-[#652D90]/80 text-white text-lg font-semibold rounded-xl hover:shadow-xl transition-all duration-300 shadow-lg"
             >
               {t("clienstory.contactus")}
             </a>
@@ -340,9 +341,9 @@ const References = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+            <h2 className="text-4xl max-w-2xl mx-auto font-bold text-gray-900 sm:text-5xl">
               {t("clienstory.proceeshf")}
-              <span className="text-blue-600">
+              <span className="text-[#652D90]">
                 {" "}
                 {t("clienstory.processhh")}
               </span>
@@ -431,7 +432,7 @@ const References = () => {
                   className={`px-6 py-2 rounded-lg ${
                     activeStep === 1
                       ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                      : "bg-blue-100 text-blue-600 hover:bg-blue-200"
+                      : "bg-blue-100 text-[#652D90] hover:bg-blue-200"
                   }`}
                 >
                   {t("clienstory.preius")}
@@ -467,7 +468,7 @@ const References = () => {
           >
             <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
               {t("clienstory.stafthf")}{" "}
-              <span className="text-blue-600">{t("clienstory.stafthh")}</span>{" "}
+              <span className="text-[#652D90]">{t("clienstory.stafthh")}</span>{" "}
               {t("clienstory.stafthl")}
             </h2>
             <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
@@ -494,7 +495,7 @@ const References = () => {
           >
             <a
               href={"/areas-of-work"}
-              className="inline-block px-8 py-4 bg-blue-600 text-white text-lg font-semibold rounded-xl hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
+              className="inline-block px-8 py-4 bg-[#652D90]/90 text-white text-lg font-semibold rounded-xl hover:bg-[#652D90] transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
               {t("clienstory.explorei")}
             </a>
@@ -503,6 +504,7 @@ const References = () => {
       </div>
 
       <LogoGallery />
+      <ContactSection />
     </div>
   );
 };

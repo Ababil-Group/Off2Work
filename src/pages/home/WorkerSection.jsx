@@ -38,7 +38,7 @@ const WorkerSection = () => {
 
   const interviewFeatures = [
     {
-      icon: <Video className="w-8 h-8" />,
+      icon: <Video className="w-8 h-8 " />,
       title: t("home.liveFeature1"),
       description: t("home.liveFeatured1"),
     },
@@ -61,22 +61,22 @@ const WorkerSection = () => {
 
   const seasonalFeatures = [
     {
-      icon: <Globe className="w-6 h-6 text-[#023a51]" />,
+      icon: <Globe className="w-6 h-6 text-[#652D90]" />,
       title: t("home.seasonalFeature1"),
       description: t("home.seasonalFeatureDesc1"),
     },
     {
-      icon: <Briefcase className="w-6 h-6 text-[#023a51]" />,
+      icon: <Briefcase className="w-6 h-6 text-[#652D90]" />,
       title: t("home.seasonalFeature2"),
       description: t("home.seasonalFeatureDesc2"),
     },
     {
-      icon: <UserCheck className="w-6 h-6 text-[#023a51]" />,
+      icon: <UserCheck className="w-6 h-6 text-[#652D90]" />,
       title: t("home.seasonalFeature3"),
       description: t("home.seasonalFeatureDesc3"),
     },
     {
-      icon: <Clock className="w-6 h-6 text-[#023a51]" />,
+      icon: <Clock className="w-6 h-6 text-[#652D90]" />,
       title: t("home.seasonalFeature4"),
       description: t("home.seasonalFeatureDesc4"),
     },
@@ -121,13 +121,13 @@ const WorkerSection = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="inline-block bg-[#023a51]/10 px-4 py-2 rounded-full">
-              <p className="text-[#023a51] font-medium uppercase tracking-wider text-sm">
+            <div className="inline-block bg-[#652D90]/10 px-4 py-2 rounded-full">
+              <p className="text-[#652D90] font-bold uppercase tracking-wider text-sm">
                 {t("home.seasonalSubtitle")}
               </p>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#023a51] leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#652D90] leading-tight">
               {t("home.seasonalwh")}
             </h2>
 
@@ -147,11 +147,11 @@ const WorkerSection = () => {
                   className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="bg-[#023a51]/10 p-3 rounded-full">
+                    <div className="bg-[#652D90]/10 p-3 rounded-full">
                       {feature.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg text-[#023a51] mb-1">
+                      <h3 className="font-semibold text-lg text-[#652D90] mb-1">
                         {feature.title}
                       </h3>
                       <p className="text-gray-600 text-sm">
@@ -166,7 +166,7 @@ const WorkerSection = () => {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="mt-8 bg-[#023a51] hover:bg-[#035b7a] text-white px-8 py-4 rounded-lg font-medium tracking-wide shadow-lg transition-all duration-300 flex items-center space-x-2"
+              className="mt-8 bg-[#652D90] hover:bg-[#5e248a] text-white px-8 py-4 rounded-lg font-medium tracking-wide shadow-lg transition-all duration-300 cursor-pointer flex items-center space-x-2"
             >
               <span>{t("home.seasonalwbtn")}</span>
               <svg
@@ -277,7 +277,7 @@ const WorkerSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-bold mb-6 text-[#023a51]"
+              className="text-3xl font-bold mb-6 text-[#652D90]"
             >
               {t("home.partnerh")}
             </motion.h2>
@@ -304,7 +304,7 @@ const WorkerSection = () => {
                     whileHover={{ rotate: 10, scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <CheckCircle2 className="text-[#023a51] w-7 h-7 flex-shrink-0 mt-1 group-hover:text-[#035b7a] transition-colors" />
+                    <CheckCircle2 className="text-[#652D90] w-7 h-7 flex-shrink-0 mt-1 group-hover:text-[#035b7a] transition-colors" />
                   </motion.div>
                   <p className="text-gray-700 text-base group-hover:text-gray-900 transition-colors">
                     {feature}
@@ -356,7 +356,7 @@ const WorkerSection = () => {
                 variants={fadeIn("up", "tween", index * 0.1, 0.5)}
                 className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/20 transition-all duration-300"
               >
-                <div className="bg-[#023a51] w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="bg-white/20 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
                   {feature.icon}
                 </div>
                 <h3 className="font-medium text-lg mb-2">{feature.title}</h3>
@@ -373,7 +373,7 @@ const WorkerSection = () => {
               color: "#023a51",
             }}
             whileTap={{ scale: 0.98 }}
-            className="bg-white text-[#023a51] hover:bg-gray-100 px-8 py-3 uppercase rounded-lg font-bold tracking-wide shadow-md transition-all text-xl duration-300 cursor-pointer"
+            className="bg-white text-[#652D90] hover:bg-gray-100 px-8 py-3 uppercase rounded-full font-bold tracking-wide shadow-md transition-all text-xl duration-300 cursor-pointer"
             onClick={() => {
               const section = document.querySelector("#get-in-touch");
               section?.scrollIntoView({ behavior: "smooth" });

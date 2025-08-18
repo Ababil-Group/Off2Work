@@ -1,6 +1,11 @@
 import React from "react";
 import { AiFillTikTok } from "react-icons/ai";
-import { FaFacebookSquare, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaFacebookSquare,
+  FaMailBulk,
+  FaPhone,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import {
   FaLinkedin,
   FaYoutube,
@@ -12,6 +17,8 @@ import {
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FiArrowUp } from "react-icons/fi";
+import { IoMailOutline } from "react-icons/io5";
+import { LuPhone } from "react-icons/lu";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -117,6 +124,14 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li className="inline-flex px-4 py-2 hover:bg-[#652D90] text-xl rounded-full items-center gap-3 bg-gray-600 justify-center">
+                <IoMailOutline />
+                contact@off2.work
+              </li>
+              <li className="inline-flex px-4 py-2 hover:bg-[#652D90] text-xl rounded-full items-center gap-3 bg-gray-600 justify-center">
+                <LuPhone className="" />
+                +385 91 7831 699
+              </li>
             </ul>
           </div>
 
@@ -157,14 +172,6 @@ const Footer = () => {
                       {office.country}
                     </h4>
                     <p className="text-gray-400 text-sm">{office.address}</p>
-                    {office.phone && (
-                      <div className="flex items-center mt-1">
-                        <FaPhoneAlt className="text-primary mr-2 text-sm" />
-                        <span className="text-gray-400 text-sm">
-                          {office.phone}
-                        </span>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>

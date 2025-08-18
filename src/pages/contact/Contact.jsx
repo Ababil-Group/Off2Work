@@ -9,37 +9,8 @@ import { useTranslation } from "react-i18next";
 const Contact = () => {
   const { t } = useTranslation();
   const location = useLocation();
-  const [formData, setFormData] = useState({
-    fullName: "",
-    mobile: "",
-    email: "",
-    company: "",
-    message: "",
-    workerCount: 1,
-  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({ ...prev, [id]: value }));
-  };
-
-  const handleSliderChange = (value) => {
-    setFormData((prev) => ({ ...prev, workerCount: value[0] }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setTimeout(() => setSubmitSuccess(false), 3000);
-    }, 1500);
-  };
+  const [workerCount, setWorkerCount] = useState(1);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -105,7 +76,7 @@ const Contact = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           <motion.p
-            className="text-2xl text-[#023a51] my-4"
+            className="text-xl font-bold text-[#023a51] my-4"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
@@ -113,7 +84,7 @@ const Contact = () => {
             {t("contact.contacth")}
           </motion.p>
           <motion.p
-            className="text-4xl md:text-5xl text-[#023a51] font-bold my-4"
+            className="text-4xl md:text-5xl text-[#652D90] font-bold my-4"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
@@ -144,165 +115,123 @@ const Contact = () => {
           </h2>
         </motion.div>
 
-        {submitSuccess ? (
+        <motion.form
+          action="https://formsubmit.co/d2fafb7ddeae73c2f45e67a4d9e54b71"
+          method="POST"
+          className="space-y-6"
+          variants={containerVariants}
+        >
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://off2.work/thank-you"
+          />
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative text-center"
+            className="grid md:grid-cols-2 gap-4"
+            variants={itemVariants}
           >
-            <p>{t("contact.think")}</p>
-          </motion.div>
-        ) : (
-          <motion.form
-            className="space-y-6"
-            onSubmit={handleSubmit}
-            variants={containerVariants}
-          >
-            <motion.div
-              className="grid md:grid-cols-2 gap-4"
-              variants={itemVariants}
-            >
-              <div className="space-y-2">
-                <label htmlFor="fullName" className="text-gray-600 font-medium">
-                  {t("contact.name")} *
-                </label>
-                <input
-                  id="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  placeholder={t("contact.name")}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="mobile" className="text-gray-600 font-medium">
-                  {t("contact.phone")} *
-                </label>
-                <input
-                  id="mobile"
-                  value={formData.mobile}
-                  onChange={handleChange}
-                  placeholder="091 234 5678*"
-                  type="tel"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
-                  required
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="grid md:grid-cols-2 gap-4"
-              variants={itemVariants}
-            >
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-gray-600 font-medium">
-                  {t("contact.email")} *
-                </label>
-                <input
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="me@mail.com*"
-                  type="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="company" className="text-gray-600 font-medium">
-                  {t("contact.conpany")} *
-                </label>
-                <input
-                  id="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder={t("contact.conpany")}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
-                  required
-                />
-              </div>
-            </motion.div>
-
-            <motion.div className="space-y-2" variants={itemVariants}>
-              <label className="text-gray-600 font-medium">
-                {t("contact.employee")} *
+            <div className="space-y-2">
+              <label htmlFor="fullName" className="text-gray-600 font-medium">
+                {t("contact.name")} *
               </label>
-              <div className="flex items-center space-x-4">
-                <span className="inline-block border px-4 py-2 border-gray-300 rounded-lg bg-gray-50 font-medium min-w-[60px] text-center">
-                  {formData.workerCount}
-                </span>
-                <input
-                  type="range"
-                  min="1"
-                  max="150"
-                  value={formData.workerCount}
-                  onChange={(e) =>
-                    handleSliderChange([parseInt(e.target.value)])
-                  }
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div className="space-y-2" variants={itemVariants}>
-              <label htmlFor="message" className="text-gray-600 font-medium">
-                {t("contact.sendae")}
-              </label>
-              <textarea
-                id="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="I need help with..."
-                rows={6}
+              <input
+                id="fullName"
+                name="name"
+                placeholder={t("contact.name")}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                required
               />
-            </motion.div>
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="mobile" className="text-gray-600 font-medium">
+                {t("contact.phone")} *
+              </label>
+              <input
+                id="mobile"
+                name="phone"
+                placeholder="091 234 5678*"
+                type="tel"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                required
+              />
+            </div>
+          </motion.div>
 
-            <motion.button
-              type="submit"
-              className={`w-full bg-[#3D4147] text-white py-3 rounded-3xl font-medium flex items-center justify-center transition-all ${
-                isSubmitting
-                  ? "opacity-70"
-                  : "hover:bg-blue-700 hover:shadow-md"
-              }`}
-              variants={itemVariants}
-              whileHover={!isSubmitting ? { scale: 1.02 } : {}}
-              whileTap={!isSubmitting ? { scale: 0.98 } : {}}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <svg
-                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  ></path>
-                </svg>
-              ) : (
-                <>
-                  <Send className="mr-2 h-4 w-4" />
-                </>
-              )}
-              {isSubmitting ? "Sending..." : t("contact.contactbtn")}
-            </motion.button>
-          </motion.form>
-        )}
+          <motion.div
+            className="grid md:grid-cols-2 gap-4"
+            variants={itemVariants}
+          >
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-gray-600 font-medium">
+                {t("contact.email")} *
+              </label>
+              <input
+                id="email"
+                name="email"
+                placeholder="me@mail.com*"
+                type="email"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="company" className="text-gray-600 font-medium">
+                {t("contact.conpany")} *
+              </label>
+              <input
+                id="company"
+                name="company"
+                placeholder={t("contact.conpany")}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                required
+              />
+            </div>
+          </motion.div>
+
+          <motion.div className="space-y-2" variants={itemVariants}>
+            <label className="text-gray-600 font-medium">
+              {t("contact.employee")} *
+            </label>
+            <div className="flex items-center space-x-4">
+              <span className="inline-block border px-4 py-2 border-gray-300 rounded-lg bg-gray-50 font-medium min-w-[60px] text-center">
+                {workerCount}
+              </span>
+              <input
+                type="range"
+                min="1"
+                max="150"
+                name="employees"
+                value={workerCount}
+                onChange={(e) => setWorkerCount(e.target.value)}
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+              />
+            </div>
+          </motion.div>
+
+          <motion.div className="space-y-2" variants={itemVariants}>
+            <label htmlFor="message" className="text-gray-600 font-medium">
+              {t("contact.sendae")}
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="I need help with..."
+              rows={6}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+            />
+          </motion.div>
+
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            type="submit"
+            className="w-full bg-gradient-to-r from-[#652D90] to-[#652D90]/90 hover:from-[#5e248a] hover:to-[#5e248a]/90 text-white py-3 px-6 rounded-lg font-medium flex items-center justify-center transition-all duration-300 shadow-lg"
+          >
+            <Send className="mr-2 h-5 w-5" /> {t("contact.contactbtn")}
+          </motion.button>
+        </motion.form>
       </motion.div>
-
 
       <motion.div
         initial="hidden"

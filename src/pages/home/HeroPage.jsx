@@ -81,7 +81,8 @@ const HeroPage = () => {
           </motion.div>
 
           <motion.div variants={textVariant(0.6)} className="mt-10">
-            <motion.button
+            <motion.a
+              href="/contact"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3)",
@@ -91,7 +92,7 @@ const HeroPage = () => {
               className="px-8 py-4 bg-gradient-to-r from-[#023a51] to-[#642D91] hover:from-[#642D91] hover:to-[#023a51] uppercase font-semibold text-white rounded-lg text-sm md:text-lg shadow-lg"
             >
               {t("home.herobtn")}
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
 

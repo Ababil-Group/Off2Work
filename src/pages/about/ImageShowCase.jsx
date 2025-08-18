@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const ImageShowCase = () => {
   const { t } = useTranslation();
- 
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,23 +53,6 @@ const ImageShowCase = () => {
       variants={containerVariants}
     >
       <div className="max-w-[1250px] mx-auto relative flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8 h-full">
-       
-        <motion.div
-          className="relative w-32 h-32 md:w-48 md:h-48 rounded-xl overflow-hidden md:absolute md:bottom-16 md:left-10 shadow-2xl"
-          variants={imageVariants}
-          whileHover="hover"
-        >
-          <img
-            src="/images/Off2work/About/02.jpg"
-            alt="Team collaboration"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span className="text-white font-medium text-sm">{t("aboutus.team")}</span>
-          </div>
-        </motion.div>
-
-       
         <motion.div
           className="relative w-[80%] md:w-[500px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl z-20"
           variants={{
@@ -95,7 +78,7 @@ const ImageShowCase = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-8">
-            <motion.h3
+            {/* <motion.h3
               className="text-white text-2xl font-bold"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -103,13 +86,26 @@ const ImageShowCase = () => {
               transition={{ delay: 0.8, duration: 0.6 }}
             >
               {t("aboutus.bild")}
-            </motion.h3>
+            </motion.h3> */}
           </div>
         </motion.div>
 
-        
         <motion.div
-          className="relative w-32 h-32 md:w-48 md:h-48 rounded-xl overflow-hidden md:absolute md:top-16 md:right-10 shadow-2xl"
+          className="relative w-32 h-32 md:w-72 md:h-72 rounded-xl overflow-hidden md:absolute md:bottom-16 md:left-10 shadow-2xl"
+          variants={imageVariants}
+          whileHover="hover"
+        >
+          <img
+            src="/images/Off2work/About/02.jpg"
+            alt="Team collaboration"
+            className="w-full h-full object-cover"
+          />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <span className="text-white font-medium text-sm">{t("aboutus.team")}</span>
+          </div> */}
+        </motion.div>
+        <motion.div
+          className="relative w-32 h-32 md:w-72 md:h-72 rounded-xl overflow-hidden md:absolute md:top-16 md:right-10 shadow-2xl"
           variants={imageVariants}
           whileHover="hover"
         >
@@ -118,15 +114,14 @@ const ImageShowCase = () => {
             alt="Global network"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
             <span className="text-white font-medium text-sm"> {t("aboutus.gobal")}</span>
-          </div>
+          </div> */}
         </motion.div>
       </div>
 
-    
       <motion.div
-        className="bg-[#83692c] w-full h-[130px] bottom-0 absolute -z-10"
+        className="bg-[#652D90] w-full h-[130px] bottom-0 absolute -z-10"
         variants={accentBarVariants}
       >
         <div className="absolute inset-0 overflow-hidden">
