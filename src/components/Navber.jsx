@@ -189,7 +189,7 @@ const Navbar = () => {
                     {item.children ? (
                       <>
                         <div className="hidden lg:block relative group">
-                          <div className="flex items-center font-medium space-x-1 py-2 text-[#0f2a47] hover:text-[#0f2a47] cursor-pointer">
+                          <div className="flex items-center text-lg font-medium space-x-1 py-2 text-[#0f2a47] hover:text-[#0f2a47] cursor-pointer">
                             <span>{item.title}</span>
                             <ChevronDown className="h-4 w-4" />
                           </div>
@@ -256,7 +256,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={item.href}
-                        className={`block py-2 text-[#0f2a47] hover:text-[#222e3b] font-medium ${
+                        className={`block py-2 text-[#0f2a47] text-lg hover:text-[#222e3b] font-medium ${
                           currentPath === item.href
                             ? "font-bold border-b-2 border-t-2 border-[#0f2a47]"
                             : "hover:border-b-2 hover:border-t-2 hover:border-[#222e3b]"
