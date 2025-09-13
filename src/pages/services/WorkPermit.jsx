@@ -173,13 +173,13 @@ const WorkPermit = () => {
         </motion.div>
       </motion.div>
 
-      <div className="w-full bg-white max-w-screen-lg mx-auto my-16 px-4">
+      <div className="w-full bg-white container mx-auto my-16 px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6 text-center"
+          className="text-4xl font-bold text-gray-900  max-w-3xl mx-auto sm:text-5xl mb-6 text-center"
         >
           {t("service.serviceworkpsubh")}
           <span className="text-[#652D90]">
@@ -238,7 +238,7 @@ const WorkPermit = () => {
         id="services-tailored"
         className="bg-gradient-to-b from-gray-50 to-white py-16"
       >
-        <div className="max-w-screen-lg mx-auto px-4">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -297,7 +297,7 @@ const WorkPermit = () => {
       </div>
 
       <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

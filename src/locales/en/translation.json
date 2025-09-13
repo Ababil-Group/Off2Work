@@ -4,7 +4,7 @@
     "services": "Services",
     "areas": "Areas of work",
     "success": "Client Success Stories",
-    "about": "About Us"
+    "about": "About Company"
   },
   "services": {
     "hire_talent": "Hire Talent-Trained Workers",
@@ -16,7 +16,7 @@
     "faq": "FAQs",
     "call_us": "Call Us Today",
     "contact": "Get In Touch",
-    "contact_us": "Contact Us"
+    "contact_us": "Reach Out"
   },
   "home": {
     "herohead": "Connecting Businesses with ",
@@ -25,9 +25,9 @@
     "herop": "Simplify your hiring process with Off2 Work. From sourcing top talent to handling work permits and immigration, we provide reliable, end-to-end workforce solutions tailored to your needs.",
     "herobtn": "Start Your Journey with Us",
 
-    "serviceh": "All the ",
+    "serviceh": "Where Every ",
     "servicehh": "services ",
-    "servicehl": "in one place",
+    "servicehl": "Works for You",
     "subserviceh1": "Hire Talent-Trained Workers",
     "subservicep1": "Let us handle the search, selection, and recruitment of skilled, motivated professionals who align with your business goals and culture.",
     "subserviceh2": "Work Permit Assistance",

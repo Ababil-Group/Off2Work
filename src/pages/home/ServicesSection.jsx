@@ -51,7 +51,7 @@ const ServicesSection = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-screen-lg mx-auto"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 container mx-auto"
       >
         <motion.div
           variants={cardVariants}

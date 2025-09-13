@@ -40,7 +40,7 @@ const ImageCard = ({ src, alt }) => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={inView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.6 }}
-      className="w-full md:w-1/3 h-[300px] md:h-auto relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+      className="w-full md:w-2/3 h-[300px] md:h-auto relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
     >
       <img
         src={src}
@@ -64,7 +64,7 @@ const TextCard = ({ title, description, services }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="w-full md:w-1/2 p-8 bg-white flex flex-col justify-center rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+      className="w-full md:w-2/2 p-8 bg-white flex flex-col justify-center rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
     >
       <h2 className="text-3xl font-bold text-[#652D90] mb-4">{title}</h2>
       <p className="text-gray-600 mb-6">{description}</p>
@@ -170,7 +170,7 @@ const AeraOfWork = () => {
 
       <div
         id="agriculture"
-        className="max-w-[1000px] mx-auto flex flex-col md:flex-row bg-transparent gap-4 mt-2 md:mt-20 -mb-10"
+        className="container mx-auto flex flex-col md:flex-row bg-transparent gap-4 mt-2 md:mt-20 -mb-10"
       >
         <TextCard
           title={t("areaofwork.agricultureh")}
@@ -187,7 +187,7 @@ const AeraOfWork = () => {
 
       <div
         id="wood"
-        className="max-w-[1000px] mx-auto flex flex-col md:flex-row flex-col-reverse gap-4 -mt-10 mb-8 md:mb-30"
+        className="container mx-auto flex flex-col md:flex-row flex-col-reverse gap-4 -mt-10 mb-8 md:mb-30"
       >
         <ImageCard
           src="/images/Off2work/Area-of-Work/wood-industry.jpg"
@@ -202,7 +202,7 @@ const AeraOfWork = () => {
 
       <div
         id="construction"
-        className="max-w-[1000px] mx-auto flex flex-col md:flex-row bg-transparent gap-4 mt-30 -mb-10"
+        className="container mx-auto flex flex-col md:flex-row bg-transparent gap-4 mt-30 -mb-10"
       >
         <TextCard
           title={t("areaofwork.contractionh")}
@@ -219,7 +219,7 @@ const AeraOfWork = () => {
 
       <div
         id="shipbuilding"
-        className="max-w-[1000px] mx-auto flex flex-col md:flex-row flex-col-reverse gap-4 -mt-10 mb-8 md:mb-30"
+        className="container mx-auto flex flex-col md:flex-row flex-col-reverse gap-4 -mt-10 mb-8 md:mb-30"
       >
         <ImageCard
           src="/images/Off2work/Area-of-Work/shipbuilding.jpeg"
@@ -232,7 +232,7 @@ const AeraOfWork = () => {
         />
       </div>
 
-      <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row bg-transparent gap-4 mt-8 md:mt-30 -mb-10">
+      <div className="container mx-auto flex flex-col md:flex-row bg-transparent gap-4 mt-8 md:mt-30 -mb-10">
         <TextCard
           title={t("areaofwork.tourismh")}
           description={t("areaofwork.tourismp")}
@@ -246,7 +246,7 @@ const AeraOfWork = () => {
 
       <div className="bg-[#3E3F49] h-[180px]" />
 
-      <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row flex-col-reverse gap-4 -mt-10 mb-8 md:mb-30">
+      <div className="container mx-auto flex flex-col md:flex-row flex-col-reverse gap-4 -mt-10 mb-8 md:mb-30">
         <ImageCard
           src="/images/Off2work/Area-of-Work/Production.jpg"
           alt="Production"

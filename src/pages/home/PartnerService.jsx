@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const PartnerService = () => {
   const { t } = useTranslation();
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 ">
+    <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8 ">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl max-w-4xl mx-auto font-bold text-gray-900 mb-6">
           {t("home.partnerh1")}
@@ -91,7 +91,7 @@ const PartnerService = () => {
         </div>
       </div>
 
-      <div className="bg-primary/10 rounded-xl p-12 text-center">
+      <div className="bg-primary/10 rounded-xl p-2 text-center">
         <h2 className="text-3xl font-bold text-[#652D90] mb-6">
           {t("home.partnerchoh")}
         </h2>
@@ -110,7 +110,7 @@ const PartnerService = () => {
               description: t("home.partnerchop3"),
             },
           ].map((item, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+            <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-2xl">
               <p className="text-4xl font-bold text-[#652D90] mb-2">
                 {item.stat}
               </p>

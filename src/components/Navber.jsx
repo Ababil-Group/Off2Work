@@ -254,17 +254,33 @@ const Navbar = () => {
                         </div>
                       </>
                     ) : (
-                      <Link
-                        to={item.href}
-                        className={`block py-2 text-[#0f2a47] text-lg hover:text-[#222e3b] font-medium ${
-                          currentPath === item.href
-                            ? "font-bold border-b-2 border-t-2 border-[#0f2a47]"
-                            : "hover:border-b-2 hover:border-t-2 hover:border-[#222e3b]"
-                        }`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.title}
-                      </Link>
+                      <div className="group relative">
+                        <Link
+                          to={item.href}
+                          className={`block py-2 text-[#0f2a47] text-lg font-medium transition-colors duration-300
+      ${
+        currentPath === item.href
+          ? "font-bold text-[#0f2a47]"
+          : "group-hover:text-[#222e3b]"
+      }
+    `}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.title}
+                        </Link>
+
+                        <span
+                          className={`absolute left-0 top-0 h-[2px] bg-[#0f2a47] transition-all duration-500 ease-out
+      ${currentPath === item.href ? "w-full" : "w-0 group-hover:w-full"}
+    `}
+                        ></span>
+
+                        <span
+                          className={`absolute left-0 bottom-0 h-[2px] bg-[#0f2a47] transition-all duration-500 ease-out
+      ${currentPath === item.href ? "w-full" : "w-0 group-hover:w-full"}
+    `}
+                        ></span>
+                      </div>
                     )}
                   </div>
                 ))}

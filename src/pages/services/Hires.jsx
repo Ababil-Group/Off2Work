@@ -148,7 +148,7 @@ const Hires = () => {
       </motion.div>
 
       {/* When to Hire Section */}
-      <div className="w-full bg-white max-w-screen-lg mx-auto my-6">
+      <div className="w-full bg-white container mx-auto my-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -208,13 +208,13 @@ const Hires = () => {
       </div>
 
       <div id="service-tailored" className="bg-gray-200 py-10">
-        <div className="max-w-screen-lg mx-auto p-2">
+        <div className="container mx-auto p-2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto my-6"
+            className="max-w-4xl mx-auto my-6"
           >
             <h2
               id="flexable-worksolutaion"
@@ -265,7 +265,7 @@ const Hires = () => {
       </div>
 
       <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -35,7 +35,7 @@ const Footer = () => {
                 alt="Off2Work Logo"
                 width={160}
                 height={45}
-                className="h-16 object-contain filter brightness-0 invert"
+                className="h-16 object-contain filter -brightness-300 invert"
               />
             </Link>
             <p className="text-lg leading-relaxed">{t("footer.footert2")}</p>
@@ -71,7 +71,7 @@ const Footer = () => {
                   to={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-[#652D90] hover:translate-y-2 transition-transform duration-300"
                 >
                   {social.icon}
                 </Link>

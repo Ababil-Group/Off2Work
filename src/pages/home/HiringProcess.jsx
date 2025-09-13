@@ -24,17 +24,17 @@ const HiringProcess = () => {
     },
   ];
   return (
-    <section className="max-w-[1250px] mx-auto py-16 px-6 md:px-20 text-center">
+    <section className="container mx-auto py-16 px-2 text-center">
       <h2 className="text-3xl md:text-5xl font-bold text-[#3E4247] mb-12 max-w-2xl mx-auto">
         {t("home.hiringph")}
         <span className="text-[#652D90]">{t("home.hiringphh")}</span>
       </h2>
 
-      <div className=" grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((step) => (
           <div
             key={step.id}
-            className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl max-w-[400px] mx-auto hover:translate-y-2 transition-transform duration-500 cursor-pointer"
+            className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl hover:translate-y-2 transition-transform duration-500 cursor-pointer"
           >
             <div className="relative">
               <img

@@ -173,7 +173,7 @@ const TrustedWorkForce = () => {
       </motion.div>
 
       {/* When to Hire Section */}
-      <div className="w-full bg-white max-w-screen-lg mx-auto my-12 px-4">
+      <div className="w-full bg-white container mx-auto my-12 px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -239,7 +239,7 @@ const TrustedWorkForce = () => {
         id="services-taiload"
         className="bg-gradient-to-b from-gray-100 to-white py-16"
       >
-        <div className="max-w-screen-lg mx-auto px-4">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -299,7 +299,7 @@ const TrustedWorkForce = () => {
       </div>
 
       <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
