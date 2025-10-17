@@ -36,6 +36,14 @@ const ContactInfo = () => {
       hours: "8:00 AM – 4:00 PM",
       phone: "‪+385 91 7831 699",
     },
+    {
+      title: "North Macedonia",
+      address:
+        "'Novoproektirana' bb, 1000, Vladimir Komarov 11a, Skopje 1000, North Macedonia",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d335853.17511073046!2d21.395943937411328!3d41.9515666694422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13541595f05fe855%3A0x10bd292c79fe4898!2z0JHQuNC30L3QuNGBLdGG0LXQvdGC0LDRgCDQodC40L3QtdGA0LPQuNGY0LA!5e1!3m2!1sen!2sbd!4v1759242254428!5m2!1sen!2sbd",
+      hours: "8:00 AM – 4:00 PM",
+    },
   ];
 
   return (
@@ -46,7 +54,7 @@ const ContactInfo = () => {
         {t("contact.locationhl")}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {offices.map((office, index) => (
           <div
             key={index}

@@ -21,7 +21,6 @@ const ContactSection = () => {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute top-20 left-10 w-64 h-64 bg-[#652D90]/10 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-64 h-64 bg-[#1498D4]/10 rounded-full filter blur-3xl"></div>
@@ -75,6 +74,11 @@ const ContactSection = () => {
                       address:
                         "Level 25, 108 St Georges Terrace, Perth WA 6000",
                     },
+                    {
+                      title: "North Macedonia",
+                      address:
+                        "'Novoproektirana' bb, 1000, Vladimir Komarov 11a, Skopje 1000, North Macedonia",
+                    },
                   ].map((location, index) => (
                     <motion.div
                       key={index}
@@ -102,6 +106,13 @@ const ContactSection = () => {
                     Contact Info:
                   </h4>
                   <div className="space-y-3">
+                    <a
+                      href="mailto:info@off2.work"
+                      className="flex items-center gap-3 text-gray-700 hover:text-[#652D90] transition-colors"
+                    >
+                      <Mail className="w-5 h-5 text-[#1498D4]" />
+                      info@off2.work
+                    </a>
                     <a
                       href="mailto:contact@off2.work"
                       className="flex items-center gap-3 text-gray-700 hover:text-[#652D90] transition-colors"

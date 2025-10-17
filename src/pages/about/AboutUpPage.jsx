@@ -295,7 +295,7 @@ const AboutUpPage = () => {
             {t("aboutus.our_offices")}
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {[
               {
                 country: "Romania Office HQ",
@@ -319,6 +319,12 @@ const AboutUpPage = () => {
                 address: "Ul. Hrvoja Macanovića 44A, 10000, Zagreb, Croatia",
                 phone: "+385 91 7831 699",
               },
+              {
+                country: "North Macedonia",
+                address:
+                  "'Novoproektirana' bb, 1000, Vladimir Komarov 11a, Skopje 1000, North Macedonia",
+                phone: "",
+              },
             ].map((office, index) => (
               <motion.div
                 key={index}
@@ -326,7 +332,7 @@ const AboutUpPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-white/20"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-white/20"
               >
                 <div className="flex items-start space-x-3">
                   <div className="p-2 bg-white/20 rounded-full">

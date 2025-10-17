@@ -126,6 +126,10 @@ const Footer = () => {
               ))}
               <li className="inline-flex px-4 py-2 hover:bg-[#652D90] text-xl rounded-full items-center gap-3 bg-gray-600 justify-center">
                 <IoMailOutline />
+                info@off2.work
+              </li>
+              <li className="inline-flex px-4 py-2 hover:bg-[#652D90] text-xl rounded-full items-center gap-3 bg-gray-600 justify-center">
+                <IoMailOutline />
                 contact@off2.work
               </li>
               <li className="inline-flex px-4 py-2 hover:bg-[#652D90] text-xl rounded-full items-center gap-3 bg-gray-600 justify-center">
@@ -161,6 +165,12 @@ const Footer = () => {
               {
                 country: "Croatia",
                 address: "Ul. Hrvoja Macanovića 44A, 10000, Zagreb, Croatia",
+                phone: "+385 91 7831 699",
+              },
+              {
+                country: "North Macedonia",
+                address:
+                  "'Novoproektirana' bb, 1000, Vladimir Komarov 11a, Skopje 1000, North Macedonia",
                 phone: "+385 91 7831 699",
               },
             ].map((office, index) => (
